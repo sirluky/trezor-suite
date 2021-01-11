@@ -18,7 +18,7 @@ const Flag = ({ size = 24, country, className }: Props) => {
         <Wrapper>
             <img
                 // eslint-disable-next-line global-require, import/no-dynamic-require
-                src={require(`../../images/flags/${country.toLowerCase()}.svg`)}
+                src={require(`../../images/flags/${country.toLowerCase()}.svg?sprite`)}
                 width={`${size}px`}
                 alt={`flag-${country}`}
                 className={className}
