@@ -22,6 +22,7 @@ import httpReceiver from '@module/http-receiver';
 import requestFilter from '@module/request-filter';
 import externalLinks from '@module/external-links';
 import fileProtocol from '@module/file-protocol';
+import analytics from '@module/analytics';
 
 let mainWindow: BrowserWindow;
 const APP_NAME = 'Trezor Suite';
@@ -68,6 +69,7 @@ const init = async () => {
     windowControls(mainWindow, store);
     httpReceiver(mainWindow, src);
     metadata();
+    analytics();
     await bridge();
     await tor(mainWindow, store);
 
