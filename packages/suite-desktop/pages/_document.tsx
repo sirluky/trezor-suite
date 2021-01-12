@@ -2,14 +2,11 @@ import React from 'react';
 import Document, { DocumentContext, Head, Main, NextScript } from 'next/document';
 import { resolveStaticPath } from '@suite-utils/nextjs';
 import { ServerStyleSheet } from 'styled-components';
-import sprite from 'svg-sprite-loader/runtime/sprite.build';
 
 export default class MyDocument extends Document {
     static async getInitialProps(ctx: DocumentContext) {
         const sheet = new ServerStyleSheet();
         const originalRenderPage = ctx.renderPage;
-        const spriteContent = sprite.stringify();
-
         try {
             ctx.renderPage = () =>
                 originalRenderPage({
@@ -17,7 +14,6 @@ export default class MyDocument extends Document {
                 });
             const initialProps = await Document.getInitialProps(ctx);
             return {
-                spriteContent,
                 ...initialProps,
                 styles: (
                     <>
@@ -44,7 +40,6 @@ export default class MyDocument extends Document {
                     <meta name="viewport" content="width=device-width, initial-scale=1" />
                 </Head>
                 <body style={{ overflow: 'hidden' }}>
-                    <div dangerouslySetInnerHTML={{ __html: this.props.spriteContent }} />
                     <Main />
                     <NextScript />
                 </body>

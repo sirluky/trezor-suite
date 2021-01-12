@@ -14,10 +14,10 @@ const withOptimizedImages = require('next-optimized-images');
 
 const gitRevisionPlugin = new GitRevisionPlugin();
 module.exports = withBundleAnalyzer(
-    withOptimizedImages(
-        withCustomBabelConfig(
-            withTranspileModules(
-                withImages(
+    withCustomBabelConfig(
+        withTranspileModules(
+            withImages(
+                withOptimizedImages(
                     withWorkers({
                         typescript: {
                             ignoreDevErrors: true,
