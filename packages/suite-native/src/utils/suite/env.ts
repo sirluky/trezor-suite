@@ -69,3 +69,8 @@ export const getOSTheme = (): SuiteThemeVariant => {
     // todo
     return 'light';
 };
+
+export const getOSVersion = (): any => {
+    // todo
+    return undefined;
+};
