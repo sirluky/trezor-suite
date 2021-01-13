@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { Flag, variables, types } from '../../index';
 import { storiesOf } from '@storybook/react';
 import randomColor from 'randomcolor';
+import { FLAGS } from './flags';
+import { FlagType } from 'src/support/types';
 
 const color = randomColor({ luminosity: 'light' });
 
@@ -32,9 +34,10 @@ const Text = styled.div`
 storiesOf('Flags', module).add(
     'All',
     () => {
+        const flags = Object.keys(FLAGS) as FlagType[];
         return (
             <Wrapper>
-                {variables.FLAGS.map((country: types.FlagType) => {
+                {flags.map(country => {
                     return (
                         <FlagWrapper key={country}>
                             <Text>{country}</Text>

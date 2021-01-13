@@ -13,18 +13,16 @@ interface Props {
     size?: number;
 }
 
-const Flag = ({ size = 24, country, className }: Props) => {
-    return (
-        <Wrapper>
-            <img
-                // eslint-disable-next-line global-require, import/no-dynamic-require
-                src={require(`../../images/flags/${country.toLowerCase()}.svg`)}
-                width={`${size}px`}
-                alt={`flag-${country}`}
-                className={className}
-            />
-        </Wrapper>
-    );
-};
+const Flag = ({ size = 24, country, className }: Props) => (
+    <Wrapper>
+        <img
+            // eslint-disable-next-line global-require, import/no-dynamic-require
+            src={require(`../../images/flags/${country.toLowerCase()}.svg`)}
+            width={`${size}px`}
+            alt={`flag-${country}`}
+            className={className}
+        />
+    </Wrapper>
+);
 
 export { Flag, Props as FlagProps };
