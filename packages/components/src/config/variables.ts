@@ -1,4 +1,4 @@
-import { IconType, CoinType, FlagType } from '../support/types';
+import { IconType, CoinType } from '../support/types';
 
 export const SCREEN_SIZE = {
     UNAVAILABLE: '260px',
