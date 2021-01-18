@@ -68,7 +68,6 @@ const Container = ({ title, description, cta, dataTestBase }: ContainerProps) =>
         <Wrapper data-test={`@exception/${dataTestBase}`}>
             <Title>
                 {' '}
-                MNAU MNAU MNAU
                 <Translation id={title} />
             </Title>
             <Description>
