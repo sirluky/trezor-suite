@@ -25,7 +25,8 @@ const log = {
     level: app.commandLine.getSwitchValue('log-level') || (isDev ? 'debug' : 'error'),
     writeToConsole: !app.commandLine.hasSwitch('log-no-print'),
     writeToDisk: app.commandLine.hasSwitch('log-write'),
-    outputFile: app.commandLine.getSwitchValue('log-output'),
+    outputFile: app.commandLine.getSwitchValue('log-file'),
+    outputPath: app.commandLine.getSwitchValue('log-path'),
 };
 
 const logger = new Logger(log.level as LogLevel, { ...log });
